@@ -65,7 +65,8 @@ function Upstream(opts) {
         e.code + ': ' +
         'An Upstream (`' + self.fieldName + '`) timed out waiting for file(s). ' +
         'No files were sent after waiting ' + opts.maxTimeToWaitForFirstFile + 'ms.';
-      self.fatalIncomingError(e);
+      // self.fatalIncomingError(e);
+      console.log(e);
     }
   }, opts.maxTimeToWaitForFirstFile);
   debug('Set up "maxTimeToWaitForFirstFile" timer for %dms', opts.maxTimeToWaitForFirstFile);
@@ -90,7 +91,8 @@ function Upstream(opts) {
         'An Upstream (`' + self.fieldName + '`) timed out before it was plugged into a receiver. ' +
         'It was still unused after waiting ' + opts.maxTimeToBuffer + 'ms. ' +
         'You can configure this timeout by changing the `maxTimeToBuffer` option.';
-      self.fatalIncomingError(e);
+      // self.fatalIncomingError(e);
+      console.log(e);
     }
   }, opts.maxTimeToBuffer);
 }
